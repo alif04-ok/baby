@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Louise Eunice Allicya Tomodok</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #a8e6cf, #dcedc1);
+      color: #2e7d32;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 600px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-slide {
+      animation: fadeSlide 1s ease forwards;
+    }
+
+    h1 {
+      font-size: 2.6em;
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: #558b2f;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+      color: #4e944f;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 1em;
+      background-color: #66bb6a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #4caf50;
+    }
+
+    .kejutan-img {
+      margin-top: 25px;
+      display: none;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    #ucapanTambahan {
+      margin-top: 20px;
+      color: #2e7d32;
+      font-weight: 500;
+      font-size: 1.1em;
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🌸 Selamat Ulang Tahun 🌸</h1>
+    <h2>Babyy 💚</h2>
+    <p>
+      Barakallah Babyy!! semoga di umur yang sekarang, bisa menjadi pribadi yang lebih baik, berkah umurnya, murah rezeki dan dipermudah dalam segala hal yaa!!
+      semangatt selesain kuliahnya disanaa, jaga kesehatan, jangan kebanyakan pikiran, dan nurut ya. Sehatt selalu disana yaa sayangg, banyakin bersyukur juga 
+      udah sampe di umur yang sekarang, ngeluh boleh, jangan kebanyakan. tetep banyakin bersyukur dan terus berdoa yaa sayangg..Semogaa sukses di kemudian harii sayaangg!!!
+    </p>
+
+    <img id="gambarKejutan1" class="kejutan-img" src="hbd.png" alt="Kejutan 1" />
+    <img id="gambarKejutan2" class="kejutan-img" src="hbd2.png" alt="Kejutan 2" />
+
+    <p id="ucapanTambahan">
+      💌Eh, Mau marah yaa?? itu ada filosofinya koo..tanyain di whatsapp yaa! Love You Babyy!!! 🌟
+    </p>
+
+    <button class="btn" onclick="kejutan()">Pencet ini Coba Deh 🌟</button>
+  </div>
+
+  <script>
+    let klikCount = 0;
+
+    function kejutan() {
+      klikCount++;
+
+      if (klikCount === 1) {
+        const img1 = document.getElementById('gambarKejutan1');
+        img1.style.display = 'block';
+        img1.classList.add('fade-slide');
+      } else if (klikCount === 2) {
+        const img2 = document.getElementById('gambarKejutan2');
+        const tambahan = document.getElementById('ucapanTambahan');
+        img2.style.display = 'block';
+        tambahan.style.display = 'block';
+        img2.classList.add('fade-slide');
+        tambahan.classList.add('fade-slide');
+        document.querySelector('.btn').style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
